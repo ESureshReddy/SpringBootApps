@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -22,15 +24,19 @@ public class Employee {
 	private Long id;
 	
 	@NotBlank
+	@Size(max = 20)
 	private String name;
 	
 	@NotBlank
+	@Size(max = 30)
 	private String designation;
 	
 	@NotBlank
+	@Size(max = 40)
 	private String expertise;
 	
 	@NotBlank
+	@Size(max = 10)
 	private String pfAccountNumber;
 	
 	@Temporal(TemporalType.TIMESTAMP)
